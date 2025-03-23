@@ -1,0 +1,35 @@
+.Layout-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .Layout-title {
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .Layout-hr {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  .countries-box {
+    margin-top: 20px;
+  }
+  
+  .country-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .country-flag {
+    width: 60px; /* הגדלת גודל הדגל */
+    height: 45px;
+    margin-right: 10px;
+  }
+  
+  .country-info {
+    font-size: 18px; /* הגדלת גודל הטקסט */
+  }
