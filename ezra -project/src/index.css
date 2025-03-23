@@ -1,4 +1,5 @@
 body {
+  /* text-align: center; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,6 +12,11 @@ body {
   /* אפשרויות נוספות: */
   /* background-position: center; */
   /* background-attachment: fixed; */
+  padding: 20px;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  /* height: 80vh; */
+  position: relative;
 }
 
 code {
