@@ -2,6 +2,7 @@ import React, { JSX } from 'react';
 import Header from './Header/Header.tsx';
 import './Layout.css';
 import Content from '../ContentArea/Content/Content.tsx';
+import PageContent from '../ContentArea/Content/PageContent.tsx';
 
 function Layout(): JSX.Element {
     return (
@@ -11,7 +12,8 @@ function Layout(): JSX.Element {
             </header>
             {/* <hr /> */}
             <main>
-                <Content></Content>
+                <Content/>
+                <PageContent/>
             </main>
         </div>
     );

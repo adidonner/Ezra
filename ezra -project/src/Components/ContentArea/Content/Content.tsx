@@ -1,13 +1,12 @@
-// Content.js
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
-import Ghana from '../Countries/Ghana/Ghana.tsx'; // ייבוא הקומפוננטות
-import Venezuela from '../Countries/Venezuela/Venezuela.tsx'; // ייבוא הקומפוננטות
-import Peru from '../Countries/Peru/Peru.tsx';
-import Colombia from '../Countries/Colombia/Colombia.tsx';
-import Aruba from '../Countries/Aruba/Aruba.tsx';
-import Us from '../Countries/Miami/Miami.tsx';
-import India from '../Countries/India/India.tsx';
+// import Ghana from '../Countries/Ghana/Ghana.tsx'; // ייבוא הקומפוננטות
+// import Venezuela from '../Countries/Venezuela/Venezuela.tsx'; // ייבוא הקומפוננטות
+// import Peru from '../Countries/Peru/Peru.tsx';
+// import Colombia from '../Countries/Colombia/Colombia.tsx';
+// import Aruba from '../Countries/Aruba/Aruba.tsx';
+// import Us from '../Countries/Miami/Miami.tsx';
+// import India from '../Countries/India/India.tsx';
 import './Content.css';
 
 function Content() {
@@ -60,7 +59,7 @@ function Content() {
         </div>
         <img src="central image.png" alt="CentralImage" className="center-image" />
       </div>
-      <Routes>
+      {/* <Routes>
         <Route path="/ghana" element={<Ghana/>} />
         <Route path="/venezuela" element={<Venezuela />} />
         <Route path="/peru" element={<Peru />} />
@@ -68,7 +67,7 @@ function Content() {
         <Route path="/aruba" element={<Aruba />} />
         <Route path="/us" element={<Us />} />
         <Route path="/india" element={<India />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
