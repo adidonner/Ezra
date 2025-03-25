@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* פיזור שווה של האלמנטים */
+  }
+  
+  .header-title {
+    color: #333;
+    font-size: 2em;
+    text-align: center; /* יישור טקסט למרכז */
+    flex-grow: 1; /* הרחבת הכותרת למילוי הרווח */
+  }

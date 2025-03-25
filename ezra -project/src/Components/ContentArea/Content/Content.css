@@ -1,0 +1,59 @@
+.content-container {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .image-with-countries {
+    position: relative;
+    height: 100%;
+  }
+  
+  .center-image {
+    max-width: 250px;
+    max-height: 250px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .countries-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .country-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 4px solid #eee;
+    border-radius: 8px;
+  }
+  
+  .country-flag {
+    width: 50px;
+    height: 33px;
+    margin-right: 15px;
+  }
+  
+  .country-info {
+    font-size: 18px;
+  }
+  
+  /* מיקום המדינות מסביב לתמונה המרכזית */
+  .country-item-1 { top: 5%; left: 20%; } /* גאנה */
+  .country-item-2 { top: 5%; right: 15%; } /* ונצואלה */
+  .country-item-3 { bottom: 45%; left: 10%; } /* פרו */
+  .country-item-4 { bottom: 45%; right: 5%; } /* קולומביה */
+  .country-item-5 { top: 30%; left: 0%; transform: translateY(-50%); } /* ארובה */
+  .country-item-6 { top: 30%; right: 0%; transform: translateY(-50%); } /* מיאמי */
+  .country-item-7 { bottom: 20%; left: 50%; transform: translateX(-50%); } /* הודו */
