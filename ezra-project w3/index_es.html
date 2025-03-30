@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        .Layout-container {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-image: url("./background-image1.png"); /* נתיב מתוקן */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .Layout-title {
+            color: #333;
+        }
+
+        .Layout-hr {
+            border: 1px solid #ddd;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .image-with-countries {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .center-image {
+            max-width: 120px;
+            height: auto;
+            margin: 20px;
+            border-radius: 50%
+        }
+
+        .countries-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+        }
+
+        .country-item {
+            display: flex;
+            align-items: center;
+            margin: 15px;
+            padding: 20px;
+            border: 3px solid #eee;
+            border-radius: 5px;
+        }
+
+        .country-flag {
+            width: 45px;
+            height: 30px;
+            margin-right: 20px;
+        }
+
+        .country-info {
+            font-size: 14px;
+        }
+
+        /* Specific item styles (if needed) */
+        .country-item-1 { /* Ghana */ }
+        .country-item-2 { /* Venezuela */ }
+        .country-item-3 { /* Peru */ }
+        .country-item-4 { /* Colombia */ }
+        .country-item-5 { /* Aruba */}
+        .country-item-6 { /* Miami */ }
+        .country-item-7 { /* India */ }
+    </style>
+</head>
+<body>
+    <div class="Layout-container">
+        <div style="position: fixed; top: 10px; left: 10px; z-index: 1000;">
+            <img src="/ezraLogo.jpg" alt="Logo" style="margin-right: 10px; height: 50px;">
+        </div>
+        <h1 class="Layout-title">Lets make the Great Commission!</h1>
+        <hr class="Layout-hr">
+        <div class="image-with-countries">
+            <div class="countries-container">
+                <div class="country-item country-item-1">
+                        <a href="https://joshuaproject.net/countries/GH" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/gh.svg" alt="Ghana Flag" class="country-flag">
+                    <div class="country-info">Ghana, Accra</div>
+                    </a>
+                </div>
+                <div class="country-item country-item-2">
+                    <!-- <a href="https://joshuaproject.net/countries/VE" style="text-decoration: none; color: inherit;" target="_blank"> -->
+                    <a href="https://joshuaproject-net.translate.goog/countries/VE?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=iw&_x_tr_pto=wapp" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/ve.svg" alt="Venezuela Flag" class="country-flag">
+                        <div class="country-info">Venezuela, Caracas</div>
+                    </a>
+                </div>
+                <div class="country-item country-item-3">
+                    <!-- <a href="https://joshuaproject.net/countries/PE" style="text-decoration: none; color: inherit;" target="_blank"> -->
+                    <a href="https://joshuaproject-net.translate.goog/countries/PE?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=iw&_x_tr_pto=wapp" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/pe.svg" alt="Peru Flag" class="country-flag">
+                        <div class="country-info">Peru, Lima</div>
+                    </a>
+                </div>
+                <div class="country-item country-item-4">
+                    <!-- <a href="https://joshuaproject.net/countries/CO" style="text-decoration: none; color: inherit;" target="_blank"> -->
+                    <a href="https://joshuaproject-net.translate.goog/countries/CO?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=iw&_x_tr_pto=wapp" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/co.svg" alt="Colombia Flag" class="country-flag">
+                        <div class="country-info">Colombia, Cartajena</div>
+                    </a>
+                </div>
+                <img src="./central_image.png" alt="Central Image" class="center-image">
+                <div class="country-item country-item-5">
+                    <!-- <a href="https://joshuaproject.net/countries/AA" style="text-decoration: none; color: inherit;" target="_blank"> -->
+                    <a href="https://joshuaproject-net.translate.goog/countries/AA?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=iw&_x_tr_pto=wapp" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/aw.svg" alt="Aruba Flag" class="country-flag">
+                        <div class="country-info">Aruba, Oranjestad</div>
+                    </a>
+                </div>
+                <!-- <div class="country-item country-item-6">
+                    <img src="https://flagcdn.com/us.svg" alt="United States Flag" class="country-flag">
+                    <div class="country-info">Miami, Florida</div>
+                </div> -->
+                <div class="country-item country-item-6">
+                    <!-- <a href="https://joshuaproject.net/people_groups/10291/US" style="text-decoration: none; color: inherit;" target="_blank"> -->
+                    <a href="https://joshuaproject-net.translate.goog/people_groups/10291/US?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=iw&_x_tr_pto=wapp" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/us.svg" alt="United States Flag" class="country-flag">
+                    <div class="country-info">Miami, Florida</div>
+                    </a>
+                </div>
+                <!-- <div class="country-item country-item-7">
+                    <a href="India.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://flagcdn.com/in.svg" alt="India Flag" class="country-flag">
+                        <div class="country-info">India, Kerala</div>
+                    </a>
+                </div> -->
+                <div class="country-item country-item-7">
+                    <a href="https://joshuaproject.net/countries/in" style="text-decoration: none; color: inherit;" target="_blank">
+                        <img src="https://flagcdn.com/in.svg" alt="India Flag" class="country-flag">
+                        <div class="country-info">India, Kerala</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
