@@ -2,11 +2,11 @@
     font-family: sans-serif;
     text-align: center;
     padding: 20px;
-    background-image: url("./background-image.png");
+    background-image: url("./background-image1.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    position: relative;
+    position: relative; /* חשוב כדי למקם את הכפתור בתוכו */
 }
 
 .layout-title {
@@ -45,14 +45,14 @@
     position: absolute;
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
     border: 4px solid #eee;
     border-radius: 8px;
 }
 
 .country-flag {
-    width: 50px;
-    height: 33px;
+    width: 90px; /* תיקנתי ל-90px בהתאם לקובץ הקודם */
+    height: 66px;
     margin-right: 15px;
 }
 
@@ -69,11 +69,125 @@
     height: 90px;
 }
 
+.language-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute; /* מיקום אבסולוטי בתוך הקונטיינר */
+    top: 20px;
+    right: 20px;
+    z-index: 11; /* מוודא שהכפתור מעל התוכן האחר */
+}
+
 /* מיקום המדינות מסביב לתמונה המרכזית */
-.country-item-1 { top: 5%; left: 20%; } /* גאנה */
-.country-item-2 { top: 5%; right: 15%; } /* ונצואלה */
-.country-item-3 { bottom: 45%; left: 10%; } /* פרו */
-.country-item-4 { bottom: 45%; right: 5%; } /* קולומביה */
-.country-item-5 { top: 30%; left: 0%; transform: translateY(-50%); } /* ארובה */
-.country-item-6 { top: 30%; right: 0%; transform: translateY(-50%); } /* מיאמי */
+.country-item-1 { top: 5%; left: 25%; } /* גאנה */
+.country-item-2 { top: 5%; right: 25%; } /* ונצואלה */
+.country-item-3 { bottom: 45%; left: 20%; } /* פרו */
+.country-item-4 { bottom: 45%; right: 20%; } /* קולומביה */
+.country-item-5 { top: 30%; left: 15%; transform: translateY(-50%); } /* ארובה */
+.country-item-6 { top: 30%; right: 15%; transform: translateY(-50%); } /* מיאמי */
 .country-item-7 { bottom: 27%; left: 50%; transform: translateX(-50%); } /* הודו - מיקום מתוקן */
+
+@media (max-width: 768px) {
+  .layout-container {
+    padding-top: 100px; /* מוסיף פדינג מלמעלה כדי לפנות מקום ללוגו ולכותרת */
+    text-align: center; /* מרכוז הטקסט בתוך הקונטיינר */
+  }
+
+  .logo-fixed {
+    position: absolute; /* משנה למיקום אבסולוטי כדי לא להשפיע על זרימת המסמך */
+    top: 10px;
+    left: 10px;
+    height: 60px;
+    z-index: 1000;
+  }
+
+  .language-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 11;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .layout-title {
+    position: absolute;
+    top: 25px; /* מיקום אנכי */
+    left: 50%; /* מרכוז אופקי ראשוני */
+    transform: translateX(-50%); /* הזזה חזרה בחצי מהרוחב כדי למרכז בדיוק */
+    font-size: 1.3em; /* גודל פונט מעט קטן יותר */
+    color: #333;
+  
+    max-width: 70%; /* הגבלת הרוחב כדי לא להתנגש עם הלוגו והכפתור */
+  }
+  
+  .countries-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* אין צורך ב-Flex או Grid בשלב זה, נמקם אבסולוטית */
+  }
+   .image-with-countries {
+    padding-top: 60%; /* מוסיף פדינג מלמעלה כדי ליצור מרווח לתמונה המרכזית */
+    position: relative; /* מוודא שהמיקום האבסולוטי בפנים יהיה ביחס אליו */
+    height: auto; /* מאפשר לגובה להתאים לתוכן */
+  }
+  .country-item {
+    position: absolute;
+    padding: 8px;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4); רקע שקוף קלות כדי לא להסתיר לגמרי
+  }
+ .country-flag {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+  }
+
+  .country-info {
+    font-size: 14px;
+    text-align: center;
+  }
+
+   .center-image {
+    max-width: 150px; /* הקטנה נוספת של התמונה המרכזית */
+    max-height: 150px;
+    top: 130%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .language-button {
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  /* מיקום מחדש של המדינות מסביב לתמונה המרכזית */
+  .country-item-1 { top: 10%; left: 60%; transform: translateX(-150%); } /* גאנה - למעלה משמאל */
+  .country-item-2 { top: 10%; left: 50%; transform: translateX(50%); } /* ונצואלה - למעלה מימין */
+  .country-item-3 { padding: 30px 10px; top: 60%; left: 0%; } /* פרו - הגדלת פדינג אנכי */
+  .country-item-4 { padding: 30px 10px; top: 60%; right: 0%; } /* קולומביה - הגדלת פדינג אנכי */
+  .country-item-5 { top: 160%; left: 55%; transform: translateX(-150%); } /* ארובה - למטה משמאל */
+  .country-item-6 { top:  160%; left: 60%; transform: translateX(50%); } /* מיאמי - למטה מימין */
+  .country-item-7 { bottom: -150%; left: 50%; transform: translateX(-50%); } /* הודו - למטה */
+
+
+}
