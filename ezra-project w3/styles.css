@@ -1,16 +1,23 @@
-.layout-container {
+body {
+    margin: 0; /* הסרת מרווח ברירת מחדל של הדפדפן */
+    padding: 0;
     font-family: sans-serif;
     text-align: center;
-    padding: 20px;
-    background-image: url("./background-image.png");
+    background-image: url("./background-image1.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh; /* גובה מינימלי של המסך */
     position: relative;
+}
+
+.layout-container {
+    padding: 20px;
+    height: 100%; /* מאפשר לגובה להיות יחסי לאב */
 }
 
 .layout-title {
     color: #333;
+    margin-top: 60px; /* מרווח מתחת ללוגו הקבוע */
 }
 
 .layout-hr {
@@ -21,18 +28,30 @@
 
 .image-with-countries {
     position: relative;
-    height: 100%;
+    min-height: 400px; /* גובה מינימלי לאזור התמונות */
 }
 
 .center-image {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 150px; /* גודל קטן יותר לטלפון */
+    max-height: 150px;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 10;
+}
+
+.israel-flag-overlay {
+    width: 30px; /* גודל קטן יותר לטלפון */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%); /* התאמת מיקום */
+    z-index: 11;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .countries-container {
@@ -45,19 +64,20 @@
     position: absolute;
     display: flex;
     align-items: center;
-    padding: 15px;
-    border: 4px solid #eee;
+    padding: 10px; /* פחות ריפוד לטלפון */
+    border: 2px solid #eee; /* גבול דק יותר */
     border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* רקע שקוף קלות לשיפור קריאות */
 }
 
 .country-flag {
-    width: 50px;
-    height: 33px;
-    margin-right: 15px;
+    width: 50px; /* גודל קטן יותר לדגל */
+    height: auto;
+    margin-right: 10px;
 }
 
 .country-info {
-    font-size: 18px;
+    font-size: 14px; /* גודל פונט קטן יותר */
 }
 
 .logo-fixed {
@@ -65,15 +85,114 @@
     top: 10px;
     left: 10px;
     z-index: 1000;
-    margin-right: 10px;
-    height: 90px;
+    height: 60px; /* גודל קטן יותר ללוגו */
 }
 
-/* מיקום המדינות מסביב לתמונה המרכזית */
-.country-item-1 { top: 5%; left: 20%; } /* גאנה */
-.country-item-2 { top: 5%; right: 15%; } /* ונצואלה */
-.country-item-3 { bottom: 45%; left: 10%; } /* פרו */
-.country-item-4 { bottom: 45%; right: 5%; } /* קולומביה */
-.country-item-5 { top: 30%; left: 0%; transform: translateY(-50%); } /* ארובה */
-.country-item-6 { top: 30%; right: 0%; transform: translateY(-50%); } /* מיאמי */
-.country-item-7 { bottom: 27%; left: 50%; transform: translateX(-50%); } /* הודו - מיקום מתוקן */
+.language-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 16px; /* פחות ריפוד */
+    font-size: 14px; /* גודל פונט קטן יותר */
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed; /* כפתור קבוע בפינה */
+    top: 10px;
+    right: 10px;
+    z-index: 11;
+}
+
+/* מיקום המדינות - התאמות לטלפון */
+.country-item-1 { top: 5%; left: 30%; font-size: 12px; } /* גאנה */
+.country-item-2 { top: 5%; right: 30%; font-size: 12px; } /* ונצואלה */
+.country-item-3 { bottom: 5%; left: 25%; font-size: 12px; } /* פרו */
+.country-item-4 { bottom: 5%; right: 20%; font-size: 12px; } /* קולומביה */
+.country-item-5 { top: 55%; left: 15%; transform: translateY(-50%); font-size: 12px; } /* ארובה */
+.country-item-6 { top: 55%; right: 15%; transform: translateY(-50%); font-size: 12px; } /* מיאמי */
+.country-item-7 { bottom: 0%; left: 50%; transform: translateX(-50%); font-size: 12px; } /* הודו */
+
+/* Media Query למסכים קטנים (עד 768px רוחב) */
+@media (max-width: 768px) {
+    .layout-title {
+        font-size: 1.5em;
+        margin-top: 80px;
+    }
+
+    .layout-hr {
+        width: 95%;
+    }
+
+    .center-image {
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    .israel-flag-overlay {
+        width: 25px;
+        transform: translate(-50%, -180%);
+    }
+
+    .country-item {
+        padding: 8px;
+        flex-direction: column; /* סידור אנכי של דגל וטקסט */
+        align-items: center;
+        text-align: center;
+    }
+
+    .country-flag {
+        width: 40px;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .country-info {
+        font-size: 12px;
+    }
+
+    /* מיקום מחדש של פריטים קצת יותר קרוב במובייל */
+    .country-item-1 { top: 10%; left: 15%; }
+    .country-item-2 { top: 10%; right: 10%; }
+    .country-item-3 { bottom: 20%; left: 15%; }
+    .country-item-4 { bottom: 20%; right: 8%; }
+    .country-item-5 { top: 50%; left: 0%; }
+    .country-item-6 { top: 50%; right: 0%; }
+    .country-item-7 { bottom: 0%; left: 50%; }
+}
+
+/* Media Query למסכים קטנים עוד יותר (עד 480px רוחב) - התאמות נוספות במידת הצורך */
+@media (max-width: 480px) {
+    .layout-title {
+        font-size: 1.2em;
+        margin-top: 70px;
+    }
+
+    .country-item {
+        padding: 5px;
+    }
+
+    .country-info {
+        font-size: 10px;
+    }
+}
+.prayer-image-container {
+    text-align: center;
+    margin-top: 20px; /* Add some space above the image */
+}
+
+.prayer-image-container p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: bold;
+    background-color: #f0f0f0; /* צבע רקע צהוב - ניתן לשנות */
+    display: inline-block; /* כדי שהרקע יתאים לרוחב הטקסט */
+    padding: 5px 10px; /* הוספת ריפוד מסביב לטקסט */
+    border-radius: 5px; /* עיגול קל של הפינות (אופציונלי) */
+    border: 1px solid #ccc; /* מסגרת דקה בצבע אפור בהיר */
+}
+
+.prayer-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc; /* Optional border */
+}
