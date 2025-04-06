@@ -1,0 +1,41 @@
+html, body, #root {
+  text-align: center;
+  /* height: auto; */
+  font-size: x-large;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', */
+    /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', */
+    /* sans-serif; */
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  background-image: url("./Assets/images/background-image.png");
+  background-size: cover; /* אופציונלי: מכסה את כל שטח המסך */
+  background-repeat: no-repeat; /* אופציונלי: מונע חזרה של התמונה */
+  /* אפשרויות נוספות: */
+  background-position: center;
+  /* background-attachment: fixed; */
+  height: 70vh;
+  /* position: relative; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+select, input, button {
+  font-size: x-large;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 300px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto;
+  box-shadow: 10px 10px 10px;
+  text-align: left;
+}
