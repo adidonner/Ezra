@@ -14,21 +14,46 @@ body {
 .layout-container {
     padding: 20px;
     height: 100%; /* מאפשר לגובה להיות יחסי לאב */
-    .left-sidebar1 {
-        position: absolute;
-        transform: translateY(-30%);
-        display: flex;
+    .buttons-container {
+        display: flex; /* הופך את הקונטיינר לגמיש */
+        flex-direction: row; /* מסדר את הפריטים בשורה (אופקית) */
+        align-items: center; /* מיישר את הפריטים אנכית למרכז (אופציונלי) */
+        /* ניתן להוסיף כאן מאפיינים נוספים ליישור וריווח */
+      }
+      
+      .left-sidebar1,
+      .left-sidebar2,
+      .left-sidebar3 {
+        /* הסר את המיקום האבסולוטי והטרנספורמציה שגורמים להם להיות אחד מתחת לשני */
+        position: static;
+        transform: none;
+        /* שנה את כיוון הגמישות בחזרה לעמודה עבור התוכן הפנימי של הכפתור אם יש כזה */
         flex-direction: column;
-        align-items: initial;
-        border-right: 1px solid #ccc; /* קו הפרדה */
-        background-color: rgb(221, 252, 247);
+        /* המשך עם שאר הסגנונות */
+        border-right: 1px solid #ccc;
+        background-color: inherit; /* אפשר לרשת את צבע הרקע או להגדיר צבע ספציפי */
         color: #333;
         border: 1px solid #ccc;
-        padding: 8px 16px; /* פחות ריפוד */
-        font-size: 14px; /* גודל פונט קטן יותר */
+        padding: 8px 16px;
+        font-size: 14px;
         cursor: pointer;
         border-radius: 5px;
         z-index: 11;
+        margin-left: 10px; /* הוספת מרווח בין הכפתורים (אופציונלי) */
+      }
+      
+      /* הסר את הגבול הימני מהכפתור האחרון אם לא רוצים אותו */
+      .buttons-container button:last-child {
+        border-right: none;
+      }
+    .left-sidebar1 {
+        background-color: rgb(214, 214, 244);
+    }
+    .left-sidebar2 {
+        background-color: rgb(243, 235, 124);
+    }
+    .left-sidebar3 {
+        background-color: rgb(221, 252, 247);
     }
 }
 
