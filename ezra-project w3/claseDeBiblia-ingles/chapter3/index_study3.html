@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bible</title>`
+    <link rel="stylesheet" href="styles_study3.css">
+</head>
+<body>
+
+    <div class="story-container">
+        <a href="/claseDeBiblia-ingles/chapter1/index_study1.html">Chapter 1</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter2/index_study2.html">Chapter 2</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter3/index_study3.html">Chapter 3</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter4/index_study4.html">Chapter 4</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <h2>God Made People</h2>
+        <img src="people-God-made.jpg" alt="people God made" width="300" height="300">
+        <p id="story-part1">
+            THESE ARE THE PEOPLE God made. Can you see them in the picture? They are behind
+            the flowers in the middle of the picture. Can you point to them? The man's name
+            is Adam. The lady's name is Eve. Adam and Eve did not have a mother and father.
+            God made them out of dust from the ground, and then He made them become alive.
+            God made them happy and good. They love God and God loves them.
+        </p>
+        
+        <p id="story-part2" class="hidden">
+            In the picture you see them looking up toward God. No wonder they are so happy.<br/>
+            Genesis 2:7-9
+        </p>
+        <button id="read-more" class="read-more-button">Read More</button>
+        <div>
+            <button id="play-audio" class="audio-button">Play Audio</button>
+            <button id="stop-audio" class="audio-button" disabled>Stop Audio</button>
+            <audio id="audio-player" src="chapter3.mp3"></audio>
+        </div>
+    </div>
+    <script>
+        const readMoreButton = document.getElementById('read-more');
+        const storyPart2 = document.getElementById('story-part2');
+        const playAudioButton = document.getElementById('play-audio');
+        const stopAudioButton = document.getElementById('stop-audio');
+        const audioElement = document.getElementById('audio-player');
+
+        readMoreButton.addEventListener('click', () => {
+            storyPart2.classList.remove('hidden');
+            readMoreButton.classList.add('hidden');
+            storyRead = true;
+            checkIfReady();
+        });
+
+        playAudioButton.addEventListener('click', () => {
+            audioElement.play();
+            playAudioButton.disabled = true;
+            stopAudioButton.disabled = false;
+            playAudioButton.classList.add('playing');
+            stopAudioButton.classList.remove('playing');
+        });
+
+        stopAudioButton.addEventListener('click', () => {
+            audioElement.pause();
+            audioElement.currentTime = 0; // Optionally reset to the beginning
+            playAudioButton.disabled = false;
+            stopAudioButton.disabled = true;
+            playAudioButton.classList.remove('playing');
+            stopAudioButton.classList.add('playing');
+        });
+
+        audioElement.addEventListener('ended', () => {
+            playAudioButton.disabled = false;
+            stopAudioButton.disabled = true;
+            playAudioButton.classList.remove('playing');
+            stopAudioButton.classList.remove('playing');
+        });
+
+    </script>
+
+    <div class="questions-container">
+        <h3>Questions</h3>
+        <div id="question1" class="question">
+            <p>1. What is the man's name?
+            <input type="text" id="answer1" name="q1"></p>
+        </div>
+        <div id="question2" class="question">
+            <p>2. What is the lady's name?
+            <input type="text" id="answer2" name="q2"></p>
+        </div>
+        <div id="question3" class="question">
+            <p>3. Did Adam and Eve have a mother and father?
+            <input type="text" id="answer3" name="q3"></p>
+        </div>
+        <div id="question4" class="question">
+            <p>4. Who made Adam and Eve?
+            <input type="text" id="answer4" name="q4"></p>
+        </div>
+        <button onclick="checkAnswers()">Check Answers</button>
+        <div id="results"></div>
+    </div>
+    
+    <script>
+    function checkAnswers() {
+        const answer1 = document.getElementById("answer1").value.trim().toLowerCase();
+        const answer2 = document.getElementById("answer2").value.trim().toLowerCase();
+        const answer3 = document.getElementById("answer3").value.trim().toLowerCase();
+        const answer4 = document.getElementById("answer4").value.trim().toLowerCase();
+        const resultsDiv = document.getElementById("results");
+        const questionsContainer = document.querySelector(".questions-container");
+    
+        let correctCount = 0;
+        let resultsText = "Results:<br>";
+    
+        if (answer1 === "adam") {
+            correctCount++;
+            resultsText += "1. Correct<br>";
+        } else {
+            resultsText += "1. Incorrect<br>";
+        }
+    
+        if (answer2 === "eve") {
+            correctCount++;
+            resultsText += "2. Correct<br>";
+        } else {
+            resultsText += "2. Incorrect<br>";
+        }
+    
+        if (answer3 === "no") {
+            correctCount++;
+            resultsText += "3. Correct<br>";
+        } else {
+            resultsText += "3. Incorrect<br>";
+        }
+    
+        if (answer4 === "god") {
+            correctCount++;
+            resultsText += "4. Correct<br>";
+        } else {
+            resultsText += "4. Incorrect<br>";
+        }
+    
+        resultsText += `Number of correct answers: ${correctCount} out of 4`;
+        resultsDiv.innerHTML = resultsText;
+        }
+    </script>
+
+<button id="play-game" class="game-button">Go to the Game</button>
+
+<script>
+    const playGameButton = document.getElementById('play-game');
+
+    playGameButton.addEventListener('click', () => {
+        window.location.href = "/claseDeBiblia-ingles/chapter3/game/index_play3.html";
+    });
+    
+</script>
+
+</body>
+</html>

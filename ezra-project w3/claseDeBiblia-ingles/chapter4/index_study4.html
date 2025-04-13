@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bible</title>
+    <link rel="stylesheet" href="styles_study4.css">
+</head>
+<body>
+
+    <div class="story-container">
+        <a href="/claseDeBiblia-ingles/chapter1/index_study1.html">Chapter 1</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter2/index_study2.html">Chapter 2</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter3/index_study3.html">Chapter 3</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter4/index_study4.html">Chapter 4</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <h2>Out Of The Garden</h2>
+        <img src="out-of-the-garden.jpg" alt="Out of the Garden" width="200" height="250">
+        <p id="story-part1">
+            ADAM AND EVE are not happy now. Do you know why they are so sad? 
+            It is because they have been bad. They did something God told them not to do. 
+            God told them they could eat anything except the fruit from one tree God told 
+            them not to eat that one kind but they could eat all the other kinds. 
+            The tree was so pretty and the fruit on it looked so nice that Eve wanted to eat 
+            it, but God said "No." Then Satan, who is God's enemy, told Eve to eat it even 
+            if God said not to. Eve took the fruit and ate some of it; then she gave some 
+            to Adam and he ate it too. 
+        </p>
+        
+        <p id="story-part2" class="hidden">
+            Now God is punishing Adam and Eve. He is sending them out of the beautiful garden 
+            and they can never come back again.<br/>
+            Genesis 3:8-13
+        </p>
+        <button id="read-more" class="read-more-button">Read More</button>
+        <div>
+            <button id="play-audio" class="audio-button">Play Audio</button>
+            <button id="stop-audio" class="audio-button" disabled>Stop Audio</button>
+            <audio id="audio-player" src="chapter4.mp3"></audio>
+        </div>
+    </div>
+
+    <div class="questions-container">
+        <h3>Questions</h3>
+        <div class="question">
+            <p>1. Who are these two people?</p>
+            <input type="radio" name="q1" value="Adam and Eve"> Adam and Eve
+            <input type="radio" name="q1" value="Angels"> Angels
+            <input type="radio" name="q1" value="Children"> Children
+        </div>
+        <div class="question">
+            <p>2. Where are they going?</p>
+            <input type="radio" name="q2" value="Back to see Satan"> Back to see Satan
+            <input type="radio" name="q2" value="Another beautiful garden"> Another beautiful garden
+            <input type="radio" name="q2" value="Out of the beautiful garden"> Out of the beautiful garden
+        </div>
+        <div class="question">
+            <p>3. Why can't they stay in the garden?</p>
+            <input type="radio" name="q3" value="The garden was too crowded"> The garden was too crowded
+            <input type="radio" name="q3" value="They didn't like the fruit"> They didn't like the fruit
+            <input type="radio" name="q3" value="Because they have been bad and God is punishing them"> Because they have been bad and God is punishing them
+        </div>
+    </div>
+
+    <div id="correct-answers-sign" style="display: none; color: green; font-weight: bold;">All the answers are correct!</div>
+
+    <script>
+        const questionsContainer = document.querySelector('.questions-container');
+        const correctAnswersSign = document.getElementById('correct-answers-sign');
+        const correctAnswers = {
+            q1: "Adam and Eve",
+            q2: "Out of the beautiful garden",
+            q3: "Because they have been bad and God is punishing them"
+        };
+
+        questionsContainer.addEventListener('change', () => {
+            let allCorrect = true;
+            for (const questionName in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                if (!selectedAnswer || selectedAnswer.value !== correctAnswers[questionName]) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+
+            if (allCorrect) {
+                correctAnswersSign.style.display = 'block';
+            } else {
+                correctAnswersSign.style.display = 'none';
+            }
+        });
+    </script>
+
+<button id="play-game" class="game-button">Go to the Game</button>
+
+<script>
+    const playGameButton = document.getElementById('play-game');
+
+    playGameButton.addEventListener('click', () => {
+        window.location.href = "/claseDeBiblia-ingles/chapter4/game/index_play4.html";
+    });
+
+        const readMoreButton = document.getElementById('read-more');
+        const storyPart2 = document.getElementById('story-part2');
+        const q1Options = document.querySelectorAll('input[name="q1"]');
+        const q2Options = document.querySelectorAll('input[name="q2"]');
+        const q3Options = document.querySelectorAll('input[name="q3"]');
+        const playAudioButton = document.getElementById('play-audio');
+        const stopAudioButton = document.getElementById('stop-audio');
+        const audioElement = document.getElementById('audio-player');
+        let storyRead = false;
+        let q1Answered = false;
+        let q2Answered = false;
+        let q3Answered = false;
+
+        readMoreButton.addEventListener('click', () => {
+            storyPart2.classList.remove('hidden');
+            readMoreButton.classList.add('hidden');
+            storyRead = true;
+            checkIfReady();
+        });
+
+        q1Options.forEach(option => {
+            option.addEventListener('change', () => {
+                q1Answered = true;
+                checkIfReady();
+            });
+        });
+
+        q2Options.forEach(option => {
+            option.addEventListener('change', () => {
+                q2Answered = true;
+                checkIfReady();
+            });
+        });
+
+        playAudioButton.addEventListener('click', () => {
+            audioElement.play();
+            playAudioButton.disabled = true;
+            stopAudioButton.disabled = false;
+            playAudioButton.classList.add('playing');
+            stopAudioButton.classList.remove('playing');
+        });
+
+        stopAudioButton.addEventListener('click', () => {
+            audioElement.pause();
+            audioElement.currentTime = 0; // Optionally reset to the beginning
+            playAudioButton.disabled = false;
+            stopAudioButton.disabled = true;
+            playAudioButton.classList.remove('playing');
+            stopAudioButton.classList.add('playing');
+        });
+
+        audioElement.addEventListener('ended', () => {
+            playAudioButton.disabled = false;
+            stopAudioButton.disabled = true;
+            playAudioButton.classList.remove('playing');
+            stopAudioButton.classList.remove('playing');
+        });
+
+        function checkIfReady() {
+            if (storyRead && q1Answered && q2Answered && q3Answered) {
+                playGameButton.disabled = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
