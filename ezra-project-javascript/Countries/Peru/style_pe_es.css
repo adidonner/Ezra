@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* עדיין משתמשים בפלקס כדי לסדר את ה-page-container ואת רשימת התפילות המקומית */
+    flex-direction: column; /* סידור אנכי של רכיבי ה-body */
+    align-items: stretch; /* מותח את רכיבי ה-body לרוחב המלא */
+}
+
+.page-container {
+    display: flex; /* כדי לסדר את רשימת התפילות, התוכן הראשי וסרגל הצדדי בשורה */
+    margin-bottom: 20px; /* הוספת מרווח מתחת לכל החלקים העליונים */
+}
+
+.logo-container {
+    flex: 0 0 auto;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.logo-fixed {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+}
+
+.prayer-list {
+    flex: 0 0 200px;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+/* סגנון עבור הכותרת "Puntos de Oración" */
+.prayer-list h2 {
+    color: #007bff; /* צבע תכלת */
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+.main-content {
+    flex: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+    align-self: center;
+    font-size: 2.5em;
+}
+
+.flag-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.flag-container img {
+    width: 150px;
+}
+
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.video-link {
+    margin-top: 10px;
+}
+
+.right-sidebar {
+    flex: 0 0 250px;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-sidebar h2 {
+    color: #007bff;
+    margin-top: 0; /* תיקון המרווח העליון */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.right-sidebar a.link-button {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.right-sidebar label {
+    text-align: left;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.spanish-button-container {
+    margin-bottom: 10px;
+}
+
+.spanish-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #5cb85c;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.spanish-button:hover {
+    background-color: #4cae4c;
+}
+
+.local-prayer-list {
+    width: 100%; /* רוחב מלא כדי שיתפוס את כל השורה */
+    padding: 20px;
+    margin-top: 20px; /* הוספת מרווח מהחלק שמעליו */
+    border-top: 1px solid #ccc; /* קו הפרדה עליון */
+    text-align: center; /* מרכוז הכותרת והרשימה */
+}
+
+.local-prayer-list h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.local-prayer-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left; /* יישור הרשימה לשמאל */
+    display: inline-block; /* כדי שהרוחב של ה-ul יתאים לתוכן */
+}
+
+.local-prayer-list li {
+    margin-bottom: 5px;
+}
+

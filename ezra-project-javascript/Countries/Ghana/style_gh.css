@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    /* להצגת תוכן זה לצד זה */
+}
+
+.logo-container {
+    flex: 0 0 auto;
+    /* כדי שהלוגו לא יתפוס יותר מדי מקום */
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    /* מרכוז הלוגו אופקית */
+    align-items: flex-start;
+    /* יישור הלוגו לראש העמוד */
+}
+
+.logo-fixed {
+    width: 70px;
+    /* התאם את גודל הלוגו לפי הצורך */
+    height: auto;
+    cursor: pointer;
+    /* סמן שהלוגו הוא קישור */
+}
+
+.prayer-list {
+    flex: 0 0 200px;
+    /* רוחב קבוע לרשימת התפילה */
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.prayer-list h2 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.prayer-list ul {
+    padding-left: 20px;
+}
+
+.prayer-list li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.main-content {
+    flex: 1;
+    /* הרחבת החלק העיקרי של העמוד */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* יישור לשמאל כדי שהכפתור יהיה בצד שמאל */
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+    /* הפחתתי קצת מרווח מתחת לכותרת */
+    align-self: center;
+    /* מרכוז הכותרת בתוך ה-main-content */
+    font-size: 2.5em;
+    /* הגדלת גודל הכתב */
+}
+
+h2 {
+    color: #007bff;
+}
+
+.flag-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-self: center;
+    /* מרכוז הדגל */
+}
+
+.flag-container img {
+    width: 150px;
+}
+
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    align-self: center;
+    /* מרכוז הוידאו */
+}
+
+.video-link {
+    margin-top: 10px;
+}
+
+.right-sidebar {
+    flex: 0 0 250px;
+    /* רוחב קבוע ל-sidebar הימני */
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* יישור לימין */
+}
+
+.right-sidebar h2 {
+    color: #007bff;
+    margin-top: 55px;
+    /* הוספת ריווח עליון כדי להתאים לגובה של "Prayer Points" */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.right-sidebar a.link-button {
+    margin: 5px 0;
+    width: 100%;
+    /* כדי שהכפתורים יתפסו את כל הרוחב של ה-sidebar */
+    text-align: center;
+}
+
+.right-sidebar label {
+    text-align: left;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.spanish-button-container {
+    margin-bottom: 10px;
+    /* הוספת מרווח מתחת לכפתור */
+}
+
+.spanish-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #5cb85c;
+    /* צבע ירוק נעים */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.spanish-button:hover {
+    background-color: #4cae4c;
+}
