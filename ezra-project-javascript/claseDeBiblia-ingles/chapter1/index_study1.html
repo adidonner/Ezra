@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bible</title>
+    <link rel="stylesheet" href="styles_study1.css">
+</head>
+<body>
+
+    <div class="story-container">
+        <a href="/claseDeBiblia-ingles/chapter1/index_study1.html">Chapter 1</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter2/index_study2.html">Chapter 2</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter3/index_study3.html">Chapter 3</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/claseDeBiblia-ingles/chapter4/index_study4.html">Chapter 4</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <h2>In the Beginning</h2>
+        <img src="in-the-beginning.jpg" alt="Description of the creation of the world" width="200" height="150">
+        <p id="story-part1">
+            When it's nighttime and the lights go out, you know how dark everything gets. You can't see anything. That's how the whole world used to be. There were no pretty flowers; there were no trees or grass or birds. There were no children either. There was just darkness. God didn't want everything to be dark. He decided to make some people. People couldn't live in the dark so God created a beautiful world full of light.
+        </p>
+        <p id="story-part2" class="hidden">
+            God didn't want everything to be dark. He decided to make some people. People couldn't live in the dark so God created a beautiful world full of light.<br/>
+            Genesis 1:2-5
+        </p>
+        <button id="read-more" class="read-more-button">Read More</button>
+        <div>
+            <button id="play-audio" class="audio-button">Play Audio</button>
+            <button id="stop-audio" class="audio-button" disabled>Stop Audio</button>
+            <audio id="audio-player" src="chapter1.mp3"></audio>
+        </div>
+    </div>
+
+    <div class="questions-container">
+        <h3>Questions</h3>
+        <div class="question">
+            <p>1. Can you see anything at night when you go to sleep and the lights go out?</p>
+            <input type="radio" name="q1" value="yes"> Yes
+            <input type="radio" name="q1" value="no"> No
+        </div>
+        <div class="question">
+            <p>2. Did God want everything to be dark?</p>
+            <input type="radio" name="q2" value="yes"> Yes
+            <input type="radio" name="q2" value="no"> No
+        </div>
+    </div>
+
+    <button id="play-game" class="game-button" disabled>Go to the Game</button>
+
+    <script>
+        const readMoreButton = document.getElementById('read-more');
+        const storyPart2 = document.getElementById('story-part2');
+        const playGameButton = document.getElementById('play-game');
+        const q1Options = document.querySelectorAll('input[name="q1"]');
+        const q2Options = document.querySelectorAll('input[name="q2"]');
+        const playAudioButton = document.getElementById('play-audio');
+        const stopAudioButton = document.getElementById('stop-audio');
+        const audioElement = document.getElementById('audio-player');
+        let storyRead = false;
+        let q1Answered = false;
+        let q2Answered = false;
+
+        readMoreButton.addEventListener('click', () => {
+            storyPart2.classList.remove('hidden');
+            readMoreButton.classList.add('hidden');
+            storyRead = true;
+            checkIfReady();
+        });
+
+        q1Options.forEach(option => {
+            option.addEventListener('change', () => {
+                q1Answered = true;
+                checkIfReady();
+            });
+        });
+
+        q2Options.forEach(option => {
+            option.addEventListener('change', () => {
+                q2Answered = true;
+                checkIfReady();
+            });
+        });
+
+        playAudioButton.addEventListener('click', () => {
+            audioElement.play();
+            playAudioButton.disabled = true;
+            stopAudioButton.disabled = false;
+            playAudioButton.classList.add('playing');
+            stopAudioButton.classList.remove('playing');
+        });
+
+        stopAudioButton.addEventListener('click', () => {
+            audioElement.pause();
+            audioElement.currentTime = 0; // Optionally reset to the beginning
+            playAudioButton.disabled = false;
+            stopAudioButton.disabled = true;
+            playAudioButton.classList.remove('playing');
+            stopAudioButton.classList.add('playing');
+        });
+
+        audioElement.addEventListener('ended', () => {
+            playAudioButton.disabled = false;
+            stopAudioButton.disabled = true;
+            playAudioButton.classList.remove('playing');
+            stopAudioButton.classList.remove('playing');
+        });
+
+        function checkIfReady() {
+            if (storyRead && q1Answered && q2Answered) {
+                playGameButton.disabled = false;
+                playGameButton.addEventListener('click', () => {
+                    window.location.href = "/claseDeBiblia-ingles/chapter1/game/index_play1.html";
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
